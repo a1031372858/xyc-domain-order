@@ -12,4 +12,5 @@ public class OrderTO {
     private Integer orderStatus;
     private String buyerName;
     private String buyerMobile;
+    private Long shopId;
 }
