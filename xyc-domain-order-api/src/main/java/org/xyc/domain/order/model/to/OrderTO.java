@@ -8,6 +8,7 @@ import lombok.Data;
  */
 @Data
 public class OrderTO {
+    private Long id;
     private String orderCode;
     private Integer orderStatus;
     private String buyerName;

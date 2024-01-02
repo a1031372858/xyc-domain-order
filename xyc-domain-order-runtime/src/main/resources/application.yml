@@ -1,2 +1,9 @@
 server:
   port: 80
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://47.94.163.139:5432/xyc_mall
+    username: postgres
+    password: postgres

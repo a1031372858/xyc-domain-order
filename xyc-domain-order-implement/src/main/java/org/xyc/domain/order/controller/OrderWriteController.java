@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.xyc.domain.order.model.request.OrderCreateRequest;
 import org.xyc.domain.order.model.to.OrderTO;
 import org.xyc.domain.order.service.OrderService;
 
@@ -13,14 +14,12 @@ import org.xyc.domain.order.service.OrderService;
  */
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("api/order")
+@RequestMapping("api/order/write")
 public class OrderWriteController {
     private final OrderService orderService;
 
     @GetMapping("/create")
-    public OrderTO createOrder(String buyerName, String buyerMobile, Long shopId){
-        OrderTO orderTO = new OrderTO();
-        orderTO.setOrderCode("12355");
-        return orderTO;
+    public OrderTO createOrder(OrderCreateRequest request){
+        return orderService.createOrder(request);
     }
 }
