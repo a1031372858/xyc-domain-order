@@ -7,7 +7,7 @@ import org.xyc.domain.order.mapper.OrderMapper;
 import org.xyc.domain.order.model.po.OrderPO;
 import org.xyc.domain.order.model.request.OrderCreateRequest;
 import org.xyc.domain.order.model.to.OrderTO;
-import org.xyc.domain.order.utils.OrderHelper;
+import org.xyc.domain.order.util.OrderHelper;
 
 /**
  * @author xuyachang
