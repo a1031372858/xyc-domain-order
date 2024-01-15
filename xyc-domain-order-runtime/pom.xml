@@ -25,7 +25,6 @@
         <dependency>
             <groupId>org.xyc</groupId>
             <artifactId>xyc-domain-order-implement</artifactId>
-            <version>${xyc.domain.order.version}</version>
         </dependency>
     </dependencies>
 </project>

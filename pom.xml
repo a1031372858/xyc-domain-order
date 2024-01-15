@@ -27,9 +27,19 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.18.24</version>
+                <groupId>org.xyc</groupId>
+                <artifactId>xyc-domain-base</artifactId>
+                <version>${xyc.domain.base.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.xyc</groupId>
+                <artifactId>xyc-domain-order-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.xyc</groupId>
+                <artifactId>xyc-domain-order-implement</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
