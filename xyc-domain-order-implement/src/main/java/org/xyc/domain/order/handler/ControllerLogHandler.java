@@ -53,7 +53,7 @@ public class ControllerLogHandler {
         Object result = point.proceed();
         stopWatch.stop();
         double totalTime = stopWatch.getTotalTimeMillis();
-        log.info("----url={},time={},response={}",request.getRequestURL(),totalTime, JSON.toJSONString(result));
+        log.info("----url={},time={}ms,response={}",request.getRequestURL(),totalTime, JSON.toJSONString(result));
         return result;
     }
 }
