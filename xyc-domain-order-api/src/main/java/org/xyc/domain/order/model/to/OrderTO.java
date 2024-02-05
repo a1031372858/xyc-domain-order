@@ -10,7 +10,7 @@ import lombok.Data;
 public class OrderTO {
     private Long id;
     private String orderCode;
-    private Integer orderStatus;
+    private String orderStatus;
     private String buyerName;
     private String buyerMobile;
     private Long shopId;

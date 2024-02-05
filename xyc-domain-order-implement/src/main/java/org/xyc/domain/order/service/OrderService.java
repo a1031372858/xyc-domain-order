@@ -2,6 +2,8 @@ package org.xyc.domain.order.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.xyc.domain.base.model.Response;
+import org.xyc.domain.order.common.constant.OrderStatusConstant;
 import org.xyc.domain.order.converter.OrderConverter;
 import org.xyc.domain.order.mapper.OrderMapper;
 import org.xyc.domain.order.model.po.OrderPO;
@@ -21,21 +23,20 @@ public class OrderService {
 
     private final OrderConverter orderConverter;
 
-    public OrderTO queryById(Long id){
+    public Response<OrderTO> queryById(Long id){
         OrderPO orderPO = orderMapper.selectById(id);
-        OrderTO orderTO = orderConverter.convertT(orderPO);
-        return orderTO;
+        return Response.success(orderConverter.convertT(orderPO));
     }
 
-    public OrderTO createOrder(OrderCreateRequest request){
+    public Response<OrderTO> createOrder(OrderCreateRequest request){
         OrderPO orderPO = new OrderPO();
         orderPO.setOrderCode(OrderHelper.getOrderCode());
         orderPO.setBuyerMobile(request.getBuyerMobile());
         orderPO.setBuyerName(request.getBuyerName());
-        orderPO.setOrderStatus(10);
+        orderPO.setOrderStatus(OrderStatusConstant.CREATED);
         orderPO.setShopId(request.getShopId());
         orderMapper.insert(orderPO);
-        return orderConverter.convertT(orderPO);
+        return Response.success(orderConverter.convertT(orderPO));
     }
 
     public OrderTO findOrder(String orderCoe) {

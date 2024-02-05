@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.xyc.domain.base.model.Response;
 import org.xyc.domain.order.model.po.OrderPO;
 import org.xyc.domain.order.model.request.OrderCreateRequest;
 import org.xyc.domain.order.model.to.OrderTO;
@@ -20,7 +21,7 @@ public class OrderReadController {
     private final OrderService orderService;
 
     @GetMapping("/get")
-    public OrderTO findOrder(){
+    public Response<OrderTO> findOrder(){
         return orderService.queryById(1L);
     }
 }
