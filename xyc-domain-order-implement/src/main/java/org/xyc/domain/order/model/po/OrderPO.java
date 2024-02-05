@@ -8,7 +8,7 @@ import org.xyc.domain.base.model.ModelBase;
  * @date 2023/12/29
  */
 @Data
-public class OrderPO extends ModelBase<OrderPO> {
+public class OrderPO extends ModelBase {
     private String orderCode;
     private String orderStatus;
     private String buyerName;
