@@ -3,7 +3,6 @@ server:
 
 spring:
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://47.94.163.139:5432/xyc_mall
-    username: postgres
-    password: postgres
+    url: jdbc:mysql://47.116.216.209:3306/xyc_mall
+    username: root
+    password: xycmall20240204
