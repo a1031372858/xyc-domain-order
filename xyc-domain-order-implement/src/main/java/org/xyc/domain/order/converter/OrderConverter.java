@@ -1,7 +1,7 @@
 package org.xyc.domain.order.converter;
 
 import org.mapstruct.Mapper;
-import org.xyc.domain.order.base.BaseConverter;
+import org.xyc.domain.base.BaseConverter;
 import org.xyc.domain.order.model.po.OrderPO;
 import org.xyc.domain.order.model.to.OrderTO;
 
