@@ -2,12 +2,13 @@ package org.xyc.domain.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.xyc.domain.order.model.to.OrderTO;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author xuyachang
  * @date ${DATE}
  */
+@EnableDiscoveryClient
 @SpringBootApplication
 public class Application {
     public static void main(String[] args) {
