@@ -19,6 +19,6 @@ public class OrderWriteController {
 
     @PostMapping("/create")
     public Response<OrderTO> createOrder(@RequestBody OrderCreateRequest request){
-        return orderService.createOrder(request);
+        return Response.success(orderService.createOrder(request));
     }
 }

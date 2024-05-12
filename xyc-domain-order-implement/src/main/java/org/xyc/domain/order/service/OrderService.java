@@ -23,12 +23,11 @@ public class OrderService {
 
     private final OrderConverter orderConverter;
 
-    public Response<OrderTO> queryById(Long id){
-        OrderPO orderPO = orderMapper.selectById(id);
-        return Response.success(orderConverter.convertT(orderPO));
+    public OrderTO queryById(Long id){
+        return orderConverter.convertT(orderMapper.selectById(id));
     }
 
-    public Response<OrderTO> createOrder(OrderCreateRequest request){
+    public OrderTO createOrder(OrderCreateRequest request){
         OrderPO orderPO = new OrderPO();
         orderPO.setOrderCode(OrderHelper.getOrderCode());
         orderPO.setBuyerMobile(request.getBuyerMobile());
@@ -36,7 +35,7 @@ public class OrderService {
         orderPO.setOrderStatus(OrderStatusConstant.CREATED);
         orderPO.setShopId(request.getShopId());
         orderMapper.insert(orderPO);
-        return Response.success(orderConverter.convertT(orderPO));
+        return orderConverter.convertT(orderPO);
     }
 
     public OrderTO findOrder(String orderCoe) {

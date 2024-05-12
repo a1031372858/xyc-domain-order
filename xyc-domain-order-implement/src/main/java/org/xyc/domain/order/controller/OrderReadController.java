@@ -22,6 +22,6 @@ public class OrderReadController {
 
     @GetMapping("/get")
     public Response<OrderTO> findOrder(){
-        return orderService.queryById(1L);
+        return Response.success(orderService.queryById(1L));
     }
 }
