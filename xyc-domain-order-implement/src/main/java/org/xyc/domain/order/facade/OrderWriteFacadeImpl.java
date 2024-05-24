@@ -4,21 +4,26 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.xyc.domain.base.model.Response;
+import org.xyc.domain.order.model.request.OrderCreateRequest;
 import org.xyc.domain.order.model.to.OrderTO;
 import org.xyc.domain.order.service.OrderService;
 
 /**
  * @author xuyachang
- * @date 2024/5/17
+ * @date 2024/5/24
  */
 @RestController
 @RequiredArgsConstructor
-public class OrderReadFacadeImpl implements OrderReadFacade{
-
+public class OrderWriteFacadeImpl implements OrderWriteFacade{
     private final OrderService orderService;
 
     @Override
-    public Response<OrderTO> findOrder(@RequestBody OrderTO orderTO){
-        return Response.success(orderService.queryById(orderTO.getId()));
+    public Response<OrderTO> createOrder(@RequestBody OrderCreateRequest request){
+        return Response.success(orderService.createOrder(request));
+    }
+
+    @Override
+    public Response<Boolean> updateOrderStatus(@RequestBody OrderTO orderTO){
+        return Response.success(orderService.updateOrderStatus(orderTO));
     }
 }

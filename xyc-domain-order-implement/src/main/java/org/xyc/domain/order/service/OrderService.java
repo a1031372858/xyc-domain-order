@@ -38,7 +38,11 @@ public class OrderService {
         return orderConverter.convertT(orderPO);
     }
 
-    public OrderTO findOrder(String orderCoe) {
-        return new OrderTO();
+    public Boolean updateOrderStatus(OrderTO orderTO){
+        OrderPO orderPO = new OrderPO();
+        orderPO.setOrderStatus(orderTO.getOrderStatus());
+        orderMapper.updateById(orderPO);
+        return Boolean.TRUE;
     }
+
 }
