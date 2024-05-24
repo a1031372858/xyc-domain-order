@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class ControllerLogHandler {
 
-    @Pointcut("execution(public * org.xyc.domain.order.controller.*.*(..))")
+    @Pointcut("execution(public * org.xyc.domain.order.controller.*.*(..)) || execution(public * org.xyc.domain.order.facade.*.*(..))")
     public void logPointCut(){};
 
     @Around("logPointCut()")

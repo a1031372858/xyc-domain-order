@@ -40,6 +40,7 @@ public class OrderService {
 
     public Boolean updateOrderStatus(OrderTO orderTO){
         OrderPO orderPO = new OrderPO();
+        orderPO.setId(orderTO.getId());
         orderPO.setOrderStatus(orderTO.getOrderStatus());
         orderMapper.updateById(orderPO);
         return Boolean.TRUE;
