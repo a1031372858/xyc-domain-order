@@ -10,7 +10,7 @@ import org.xyc.domain.order.model.to.OrderTO;
  * @author xuyachang
  * @date 2024/5/17
  */
-@FeignClient("xyc-order")
+@FeignClient(value = "xyc-order",contextId = "OrderReadFacade")
 public interface OrderReadFacade {
 
     @PostMapping("/findOrder")

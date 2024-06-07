@@ -11,7 +11,7 @@ import org.xyc.domain.order.model.to.OrderTO;
  * @author xuyachang
  * @date 2024/5/24
  */
-@FeignClient("xyc-order")
+@FeignClient(value = "xyc-order",contextId = "OrderWriteFacade")
 public interface OrderWriteFacade {
 
     @PostMapping("/createOrder")
