@@ -30,6 +30,7 @@ public class OrderWriteFacadeTest {
     @Test
     public void createOrder(){
         OrderCreateRequest createRequest = new OrderCreateRequest();
+        createRequest.setBuyerId(1L);
         createRequest.setShopId(1L);
         createRequest.setBuyerMobile("15797704512");
         createRequest.setBuyerName("测试用户");

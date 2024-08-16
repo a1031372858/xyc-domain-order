@@ -26,4 +26,9 @@ public class OrderWriteFacadeImpl implements OrderWriteFacade{
     public Response<Boolean> updateOrderStatus(@RequestBody OrderTO orderTO){
         return Response.success(orderService.updateOrderStatus(orderTO));
     }
+
+    @Override
+    public Response<Boolean> updateOrderBuyerInfo(OrderTO orderTO) {
+        return Response.success(orderService.updateOrderBuyerInfo(orderTO));
+    }
 }

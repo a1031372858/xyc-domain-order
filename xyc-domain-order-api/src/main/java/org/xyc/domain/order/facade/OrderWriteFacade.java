@@ -19,4 +19,7 @@ public interface OrderWriteFacade {
 
     @PostMapping("/updateOrderStatus")
     Response<Boolean> updateOrderStatus(@RequestBody OrderTO orderTO);
+
+    @PostMapping("/updateOrderBuyerInfo")
+    Response<Boolean> updateOrderBuyerInfo(@RequestBody OrderTO orderTO);
 }

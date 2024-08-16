@@ -8,7 +8,8 @@ import lombok.Data;
  */
 @Data
 public class OrderCreateRequest {
-    String buyerName;
-    String buyerMobile;
-    Long shopId;
+    private Long buyerId;
+    private String buyerName;
+    private String buyerMobile;
+    private Long shopId;
 }

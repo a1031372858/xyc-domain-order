@@ -1,8 +1,10 @@
 package org.xyc.domain.order.service;
 
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.xyc.domain.base.model.Response;
+import org.springframework.transaction.annotation.Transactional;
 import org.xyc.domain.order.common.constant.OrderStatusConstant;
 import org.xyc.domain.order.converter.OrderConverter;
 import org.xyc.domain.order.mapper.OrderMapper;
@@ -10,6 +12,8 @@ import org.xyc.domain.order.model.po.OrderPO;
 import org.xyc.domain.order.model.request.OrderCreateRequest;
 import org.xyc.domain.order.model.to.OrderTO;
 import org.xyc.domain.order.util.OrderHelper;
+
+import java.util.Objects;
 
 /**
  * @author xuyachang
@@ -45,5 +49,18 @@ public class OrderService {
         orderMapper.updateById(orderPO);
         return Boolean.TRUE;
     }
-
+//    @Transactional
+    public Boolean updateOrderBuyerInfo(OrderTO orderTO) {
+        OrderPO orderPO = new OrderPO();
+        if(Objects.nonNull(orderTO.getBuyerName())){
+            orderPO.setBuyerName(orderTO.getBuyerName());
+        }
+        if(Objects.nonNull(orderTO.getBuyerMobile())){
+            orderPO.setBuyerMobile(orderTO.getBuyerMobile());
+        }
+        UpdateWrapper<OrderPO> orderPOUpdateWrapper = new UpdateWrapper<>();
+        orderPOUpdateWrapper.eq("buyer_id",orderTO.getBuyerId());
+        orderMapper.update(orderPO, orderPOUpdateWrapper);
+        return Boolean.TRUE;
+    }
 }

@@ -20,6 +20,10 @@ public class OrderTO extends ModelBase {
      */
     private String orderStatus;
     /**
+     * 买家Id
+     */
+    private Long buyerId;
+    /**
      * 买家名称
      */
     private String buyerName;
