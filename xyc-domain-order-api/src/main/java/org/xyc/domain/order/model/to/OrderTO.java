@@ -32,6 +32,19 @@ public class OrderTO extends ModelBase {
      */
     private String buyerMobile;
     /**
+     * 收货地址
+     */
+    private String shippingAddress;
+    /**
+     * 买家地址经度
+     */
+    private String buyerLng;
+
+    /**
+     * 买家地址纬度
+     */
+    private String buyerLat;
+    /**
      * 门店Id
      */
     private Long shopId;
@@ -55,4 +68,14 @@ public class OrderTO extends ModelBase {
      * 商品金额 单位:分
      */
     private BigDecimal skuAmt;
+
+    /**
+     * 第三方订单编码
+     */
+    private String thirdPartyOrderCode;
+
+    /**
+     * 第三方平台编码
+     */
+    private String thirdPartyChannelCode;
 }

@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.xyc.domain.base.model.Response;
+import org.xyc.domain.order.model.request.OrderCreateOrUpdateRequest;
 import org.xyc.domain.order.model.request.OrderCreateRequest;
 import org.xyc.domain.order.model.to.OrderTO;
 import org.xyc.domain.order.service.OrderService;
@@ -30,5 +31,10 @@ public class OrderWriteFacadeImpl implements OrderWriteFacade{
     @Override
     public Response<Boolean> updateOrderBuyerInfo(OrderTO orderTO) {
         return Response.success(orderService.updateOrderBuyerInfo(orderTO));
+    }
+
+    @Override
+    public Response<Boolean> orderCreateOrUpdate(OrderCreateOrUpdateRequest request) {
+        return Response.success(orderService.createOrUpdateOrder(request));
     }
 }

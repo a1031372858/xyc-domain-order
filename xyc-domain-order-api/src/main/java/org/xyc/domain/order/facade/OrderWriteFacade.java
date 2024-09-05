@@ -4,6 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.xyc.domain.base.model.Response;
+import org.xyc.domain.order.model.request.OrderCreateOrUpdateRequest;
 import org.xyc.domain.order.model.request.OrderCreateRequest;
 import org.xyc.domain.order.model.to.OrderTO;
 
@@ -22,4 +23,12 @@ public interface OrderWriteFacade {
 
     @PostMapping("/updateOrderBuyerInfo")
     Response<Boolean> updateOrderBuyerInfo(@RequestBody OrderTO orderTO);
+
+    /**
+     * 第三方订单创建和更新
+     * @param request
+     * @return
+     */
+    @PostMapping("/orderCreateOrUpdate")
+    Response<Boolean> orderCreateOrUpdate(@RequestBody OrderCreateOrUpdateRequest request);
 }
